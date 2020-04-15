@@ -21,6 +21,7 @@
 		4E64060D244646460032D97B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64060C244646460032D97B /* SoundManager.swift */; };
 		4E6406112446595A0032D97B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6406102446595A0032D97B /* GameKit.framework */; };
 		4E816BF42447709300B70223 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E816BF32447709300B70223 /* CardsCollectionViewCell.swift */; };
+		4E816BF92447800E00B70223 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E816BF82447800E00B70223 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4E64060C244646460032D97B /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4E6406102446595A0032D97B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4E816BF32447709300B70223 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E816BF82447800E00B70223 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				4E64060B2446434E0032D97B /* Model Controller */,
 				4E64060E2446464C0032D97B /* Helper */,
 				4E17B7F424476D49009FEA27 /* Custom Cell */,
+				4E816BF724477F8C00B70223 /* View Controller */,
 			);
 			path = Matching;
 			sourceTree = "<group>";
@@ -154,6 +157,14 @@
 				4E6406102446595A0032D97B /* GameKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E816BF724477F8C00B70223 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E816BF82447800E00B70223 /* GameViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E816BF92447800E00B70223 /* GameViewController.swift in Sources */,
 				4E6405E824463EA10032D97B /* AppDelegate.swift in Sources */,
 				4E64060A244643470032D97B /* CardController.swift in Sources */,
 				4E816BF42447709300B70223 /* CardsCollectionViewCell.swift in Sources */,
