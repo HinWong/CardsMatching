@@ -14,6 +14,7 @@ class CardController {
         var randomNumbersArray = [Int]()
         var randomCardsArray = [Card]()
         
+        //Generate unique pairs of cards
         while randomCardsArray.count < 8 {
             let randomNumber = arc4random_uniform(13) + 1
             if randomNumbersArray.contains(Int(randomNumber)) == false {
@@ -31,6 +32,7 @@ class CardController {
             }
         }
         
+        //Randomize the array
         for i in 0 ... randomCardsArray.count - 1 {
             let randomNumber = Int(arc4random_uniform(UInt32(randomCardsArray.count)))
             
