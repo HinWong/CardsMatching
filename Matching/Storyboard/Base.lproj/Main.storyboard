@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eeS-cz-fo0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhI-9r-ohM">
     <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -8,6 +8,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main Screen View Controller-->
+        <scene sceneID="Lkc-df-5DO">
+            <objects>
+                <viewController id="bhI-9r-ohM" customClass="MainScreenViewController" customModule="Matching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ul-uK-yaw">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-uy-hWG">
+                                <rect key="frame" x="329" y="144.66666666666666" width="238" height="124.99999999999997"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matching Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B96-z0-Tx5">
+                                        <rect key="frame" x="0.0" y="0.0" width="238" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKO-QX-Pg9">
+                                        <rect key="frame" x="0.0" y="77" width="238" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <segue destination="eeS-cz-fo0" kind="presentation" identifier="toGameVC" modalPresentationStyle="fullScreen" id="hPR-yQ-f8C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9iB-uy-hWG" firstAttribute="centerY" secondItem="9ul-uK-yaw" secondAttribute="centerY" id="4yo-aG-HiE"/>
+                            <constraint firstItem="9iB-uy-hWG" firstAttribute="centerX" secondItem="9ul-uK-yaw" secondAttribute="centerX" id="kgq-5Z-UtF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fYI-T9-Y85"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JBf-25-h8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-496.20535714285711" y="86.956521739130437"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="re7-bF-LQq">
             <objects>
@@ -35,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="30" width="808" height="363"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dzx-BW-Ddd">
-                                            <size key="itemSize" width="158" height="224"/>
+                                            <size key="itemSize" width="150" height="200"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -89,6 +129,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MDA-O6-w2x"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kgO-MP-b1r"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="KFH-ss-OLP" id="jmM-Oo-Lwf"/>
                         <outlet property="timerLabel" destination="wVh-Xd-NOe" id="5zh-Zj-D5I"/>
