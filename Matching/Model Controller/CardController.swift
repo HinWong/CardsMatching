@@ -15,7 +15,7 @@ class CardController {
         var randomCardsArray = [Card]()
         
         //Generate unique pairs of cards
-        while randomNumbersArray.count < 13 {
+        while randomNumbersArray.count < 6 {
             let randomNumber = arc4random_uniform(13) + 1
             if randomNumbersArray.contains(Int(randomNumber)) == false {
                 print(randomNumber)

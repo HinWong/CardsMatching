@@ -9,7 +9,7 @@
 import UIKit
 import GameKit
 
-class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: - Outlets
     @IBOutlet weak var timerLabel: UILabel!
@@ -21,6 +21,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var firstFlippedCardIndex: IndexPath?
     var timer: Timer?
     var milliseconds: Float = 60 * 1000 // 60 seconds on timer
+    private let spacing:CGFloat = 16.0
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -85,6 +86,13 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }//End of didSelectItemAt
     
+    //Sizing the collection view cell based on screen size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let collectionWidth = cardCollectionView.bounds.width
+        return CGSize(width: collectionWidth * 0.3, height: collectionWidth * 0.45)
+    }
+  
     //MARK: - Game logic
     func checkForMatches(_ secondFlippedCardIndex: IndexPath) {
         let cardOneCell = cardCollectionView.cellForItem(at: firstFlippedCardIndex!) as? CardsCollectionViewCell
