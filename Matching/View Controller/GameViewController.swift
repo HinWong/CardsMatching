@@ -90,7 +90,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let collectionWidth = cardCollectionView.bounds.width
-        return CGSize(width: collectionWidth * 0.3, height: collectionWidth * 0.45)
+        let collectionHeight = cardCollectionView.bounds.height
+        
+        return CGSize(width: collectionWidth * 0.3, height: collectionHeight * 0.225)
     }
   
     //MARK: - Game logic
