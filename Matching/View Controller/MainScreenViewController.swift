@@ -29,14 +29,17 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
     //MARK: - Actions
     
     @IBAction func gameCenterButtonTapped(_ sender: Any) {
-        
+        let VC = self.view.window?.rootViewController
+        let gameCenterVC = GKGameCenterViewController()
+        gameCenterVC.gameCenterDelegate = self
+        VC?.present(gameCenterVC, animated: true, completion: nil)
     }
     
 //MARK: - Game Center Methods
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-           <#code#>
-       }
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
     
     func authenticatePlayer() {
         let localPlayer = GKLocalPlayer.local
