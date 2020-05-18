@@ -22,6 +22,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var timer: Timer?
     var milliseconds: Float = 60 * 1000 // 60 seconds on timer
     private let spacing:CGFloat = 16.0
+    static let sharedInstance = GameViewController()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -29,9 +30,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cardArray = model.generateCards()
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .common)
+        gameTimer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,11 +38,35 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         SoundManager.playSound(.shuffle)
     }
     
+    //MARK: - Actions
+    
+    let alertService = AlertService()
+    
+    @IBAction func pauseButtonTapped(_ sender: Any) {
+        let alertVC = alertService.alert()
+        present(alertVC, animated: true)
+        timer?.invalidate()
+    }
+    @IBAction func quitButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toMainScreenVC", sender: self)
+    }
+    
+    
     //MARK: - Timer Methods
+    
+    func gameTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    func resumeTimer() {
+        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+    }
+    
     @objc func timerElapsed() {
         milliseconds -= 1
         let seconds = String(format: "%.2f", milliseconds/1000)
-        timerLabel.text = "Time Remaning: \(seconds)"
+        timerLabel?.text = "Time Remaining: \(seconds)"
         
         if milliseconds <= 0 {
             timer?.invalidate()
@@ -179,3 +202,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
 }//End of View Controller class
+
+//extension GameViewController: GKGameCenterControllerDelegate {
+//    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+//        <#code#>
+//    }
+//
+//
+//}
