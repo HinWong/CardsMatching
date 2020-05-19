@@ -38,6 +38,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         SoundManager.playSound(.shuffle)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer?.invalidate()
+    }
+    
     //MARK: - Actions
     
     let alertService = AlertService()
@@ -48,7 +53,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         timer?.invalidate()
     }
     @IBAction func quitButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toMainScreenVC", sender: self)
+        restartGame()
     }
     
     
@@ -174,6 +179,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if isWon == true {
             if milliseconds > 0 {
                 timer?.invalidate()
+                saveHighScore(scores: (60 - (milliseconds / 10) * -1))
             }
             title = "Great Job"
             message = "You won"
@@ -201,12 +207,33 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
     }
     
-}//End of View Controller class
+} //End of View Controller class
 
-//extension GameViewController: GKGameCenterControllerDelegate {
-//    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-//        <#code#>
-//    }
-//
-//
-//}
+extension GameViewController: GKGameCenterControllerDelegate {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func authenticatePlayer() {
+          let localPlayer = GKLocalPlayer.local
+          localPlayer.authenticateHandler = {
+              (view, error) in
+              
+              if view != nil {
+                  self.present(view!, animated: true, completion: nil)
+              } else {
+                  print(GKLocalPlayer.local.isAuthenticated)
+              }
+          }
+      }
+    
+    func saveHighScore(scores: Float) {
+          if GKLocalPlayer.local.isAuthenticated {
+              let scoreReporter = GKScore(leaderboardIdentifier: "Best_Times")
+              scoreReporter.value = Int64(Float(scores))
+              let scoreArray: [GKScore] = [scoreReporter]
+              GKScore.report(scoreArray, withCompletionHandler: nil)
+          }
+      }
+
+}

@@ -54,10 +54,10 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
         }
     }
     
-    func saveHighScore(number: Int) {
+    func saveHighScore(times: Float) {
         if GKLocalPlayer.local.isAuthenticated {
             let scoreReporter = GKScore(leaderboardIdentifier: "Best_Times")
-            scoreReporter.value = Int64(number)
+            scoreReporter.value = Int64(Float(times))
             let scoreArray: [GKScore] = [scoreReporter]
             GKScore.report(scoreArray, withCompletionHandler: nil)
         }

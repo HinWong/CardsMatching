@@ -35,10 +35,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-sy-Njg">
-                                <rect key="frame" x="332" y="44" width="62" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Game Center Logo"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-sy-Njg">
+                                <rect key="frame" x="332" y="44" width="82" height="61"/>
+                                <state key="normal" image="Game Center Logo"/>
                                 <connections>
                                     <action selector="gameCenterButtonTapped:" destination="bhI-9r-ohM" eventType="touchUpInside" id="Tox-Qb-Yla"/>
                                 </connections>
@@ -47,6 +46,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9iB-uy-hWG" firstAttribute="centerY" secondItem="9ul-uK-yaw" secondAttribute="centerY" id="4yo-aG-HiE"/>
+                            <constraint firstItem="tzf-sy-Njg" firstAttribute="top" secondItem="fYI-T9-Y85" secondAttribute="top" id="9Pd-Kw-tP4"/>
+                            <constraint firstItem="fYI-T9-Y85" firstAttribute="trailing" secondItem="tzf-sy-Njg" secondAttribute="trailing" id="ENH-dS-h89"/>
+                            <constraint firstItem="fYI-T9-Y85" firstAttribute="bottom" secondItem="tzf-sy-Njg" secondAttribute="bottom" constant="757" id="VAQ-BA-OYJ"/>
+                            <constraint firstItem="tzf-sy-Njg" firstAttribute="leading" secondItem="fYI-T9-Y85" secondAttribute="leading" constant="332" id="WrG-e2-40E"/>
                             <constraint firstItem="9iB-uy-hWG" firstAttribute="centerX" secondItem="9ul-uK-yaw" secondAttribute="centerX" id="kgq-5Z-UtF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fYI-T9-Y85"/>
