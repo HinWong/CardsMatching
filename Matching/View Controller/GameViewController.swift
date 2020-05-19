@@ -22,6 +22,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var timer: Timer?
     var milliseconds: Float = 60 * 1000 // 60 seconds on timer
     private let spacing:CGFloat = 16.0
+    static let sharedInstance = GameViewController()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -29,9 +30,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cardArray = model.generateCards()
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .common)
+        gameTimer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,11 +38,40 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         SoundManager.playSound(.shuffle)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer?.invalidate()
+    }
+    
+    //MARK: - Actions
+    
+    let alertService = AlertService()
+    
+    @IBAction func pauseButtonTapped(_ sender: Any) {
+        let alertVC = alertService.alert()
+        present(alertVC, animated: true)
+        timer?.invalidate()
+    }
+    @IBAction func quitButtonTapped(_ sender: Any) {
+        restartGame()
+    }
+    
+    
     //MARK: - Timer Methods
+    
+    func gameTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    func resumeTimer() {
+        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+    }
+    
     @objc func timerElapsed() {
         milliseconds -= 1
         let seconds = String(format: "%.2f", milliseconds/1000)
-        timerLabel.text = "Time Remaning: \(seconds)"
+        timerLabel?.text = "Time Remaining: \(seconds)"
         
         if milliseconds <= 0 {
             timer?.invalidate()
@@ -151,6 +179,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if isWon == true {
             if milliseconds > 0 {
                 timer?.invalidate()
+                saveHighScore(scores: (60 - (milliseconds / 10) * -1))
             }
             title = "Great Job"
             message = "You won"
@@ -178,4 +207,33 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
     }
     
-}//End of View Controller class
+} //End of View Controller class
+
+extension GameViewController: GKGameCenterControllerDelegate {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func authenticatePlayer() {
+          let localPlayer = GKLocalPlayer.local
+          localPlayer.authenticateHandler = {
+              (view, error) in
+              
+              if view != nil {
+                  self.present(view!, animated: true, completion: nil)
+              } else {
+                  print(GKLocalPlayer.local.isAuthenticated)
+              }
+          }
+      }
+    
+    func saveHighScore(scores: Float) {
+          if GKLocalPlayer.local.isAuthenticated {
+              let scoreReporter = GKScore(leaderboardIdentifier: "Best_Times")
+              scoreReporter.value = Int64(Float(scores))
+              let scoreArray: [GKScore] = [scoreReporter]
+              GKScore.report(scoreArray, withCompletionHandler: nil)
+          }
+      }
+
+}

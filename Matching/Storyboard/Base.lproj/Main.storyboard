@@ -35,18 +35,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-sy-Njg">
+                                <rect key="frame" x="332" y="44" width="82" height="61"/>
+                                <state key="normal" image="Game Center Logo"/>
+                                <connections>
+                                    <action selector="gameCenterButtonTapped:" destination="bhI-9r-ohM" eventType="touchUpInside" id="Tox-Qb-Yla"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9iB-uy-hWG" firstAttribute="centerY" secondItem="9ul-uK-yaw" secondAttribute="centerY" id="4yo-aG-HiE"/>
+                            <constraint firstItem="tzf-sy-Njg" firstAttribute="top" secondItem="fYI-T9-Y85" secondAttribute="top" id="9Pd-Kw-tP4"/>
+                            <constraint firstItem="fYI-T9-Y85" firstAttribute="trailing" secondItem="tzf-sy-Njg" secondAttribute="trailing" id="ENH-dS-h89"/>
+                            <constraint firstItem="fYI-T9-Y85" firstAttribute="bottom" secondItem="tzf-sy-Njg" secondAttribute="bottom" constant="757" id="VAQ-BA-OYJ"/>
+                            <constraint firstItem="tzf-sy-Njg" firstAttribute="leading" secondItem="fYI-T9-Y85" secondAttribute="leading" constant="332" id="WrG-e2-40E"/>
                             <constraint firstItem="9iB-uy-hWG" firstAttribute="centerX" secondItem="9ul-uK-yaw" secondAttribute="centerX" id="kgq-5Z-UtF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fYI-T9-Y85"/>
                     </view>
+                    <navigationItem key="navigationItem" id="I9y-ex-v2D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBf-25-h8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496.20535714285711" y="86.956521739130437"/>
+            <point key="canvasLocation" x="-497.10144927536237" y="86.383928571428569"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="re7-bF-LQq">
@@ -72,7 +84,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KFH-ss-OLP">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="788"/>
+                                        <rect key="frame" x="0.0" y="30" width="414" height="758"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dzx-BW-Ddd">
                                             <size key="itemSize" width="158" height="224"/>
@@ -114,6 +126,32 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="69U-9H-erB">
+                                        <rect key="frame" x="0.0" y="788" width="414" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jL3-rh-Eri">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Pause">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pauseButtonTapped:" destination="eeS-cz-fo0" eventType="touchUpInside" id="J1P-5e-WFJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS7-Db-lg9">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Quit">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="quitButtonTapped:" destination="eeS-cz-fo0" eventType="touchUpInside" id="nw9-RI-C6c"/>
+                                                    <segue destination="bhI-9r-ohM" kind="presentation" identifier="toMainScreenVC" modalPresentationStyle="overFullScreen" id="Bz2-yI-8xt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -142,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Game Center Logo" width="340" height="340"/>
         <image name="back" width="158" height="224"/>
         <image name="background" width="736" height="414"/>
     </resources>
