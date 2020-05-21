@@ -11,10 +11,6 @@ import GameKit
 
 class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate {
     
-    //MARK: - Properties
-    
-    var score = 0
-    
    //MARK: - Life Cycle Functions
     
     override func viewDidLoad() {
@@ -54,12 +50,5 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
         }
     }
     
-    func saveHighScore(times: Float) {
-        if GKLocalPlayer.local.isAuthenticated {
-            let scoreReporter = GKScore(leaderboardIdentifier: "Best_Times")
-            scoreReporter.value = Int64(Float(times))
-            let scoreArray: [GKScore] = [scoreReporter]
-            GKScore.report(scoreArray, withCompletionHandler: nil)
-        }
-    }
+
 }
