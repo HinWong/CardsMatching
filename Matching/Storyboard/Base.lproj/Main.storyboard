@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhI-9r-ohM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bhI-9r-ohM">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,49 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-uy-hWG">
-                                <rect key="frame" x="88" y="385.66666666666669" width="238" height="125"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matching Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B96-z0-Tx5">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKO-QX-Pg9">
-                                        <rect key="frame" x="0.0" y="77" width="238" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Play"/>
-                                        <connections>
-                                            <segue destination="eeS-cz-fo0" kind="presentation" identifier="toGameVC" modalPresentationStyle="fullScreen" id="hPR-yQ-f8C"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-sy-Njg">
-                                <rect key="frame" x="332" y="44" width="82" height="61"/>
-                                <state key="normal" image="Game Center Logo"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flippity Flop" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRN-zT-kzC">
+                                <rect key="frame" x="94.333333333333329" y="424" width="225.33333333333337" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-GD-I7o">
+                                <rect key="frame" x="20" y="502" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.094114430248737335" green="0.40153008699417114" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="gameCenterButtonTapped:" destination="bhI-9r-ohM" eventType="touchUpInside" id="Tox-Qb-Yla"/>
+                                    <action selector="playButton:" destination="bhI-9r-ohM" eventType="touchUpInside" id="Xfn-gd-SxO"/>
+                                    <segue destination="eeS-cz-fo0" kind="presentation" identifier="toGameVC" modalPresentationStyle="fullScreen" id="pNa-fW-cJm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-DO-560">
+                                <rect key="frame" x="130" y="682" width="154" height="28"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Leaderboards">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameCenterButtonTapped:" destination="bhI-9r-ohM" eventType="touchUpInside" id="7Hd-lI-KSU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9iB-uy-hWG" firstAttribute="centerY" secondItem="9ul-uK-yaw" secondAttribute="centerY" id="4yo-aG-HiE"/>
-                            <constraint firstItem="tzf-sy-Njg" firstAttribute="top" secondItem="fYI-T9-Y85" secondAttribute="top" id="9Pd-Kw-tP4"/>
-                            <constraint firstItem="fYI-T9-Y85" firstAttribute="trailing" secondItem="tzf-sy-Njg" secondAttribute="trailing" id="ENH-dS-h89"/>
-                            <constraint firstItem="fYI-T9-Y85" firstAttribute="bottom" secondItem="tzf-sy-Njg" secondAttribute="bottom" constant="757" id="VAQ-BA-OYJ"/>
-                            <constraint firstItem="tzf-sy-Njg" firstAttribute="leading" secondItem="fYI-T9-Y85" secondAttribute="leading" constant="332" id="WrG-e2-40E"/>
-                            <constraint firstItem="9iB-uy-hWG" firstAttribute="centerX" secondItem="9ul-uK-yaw" secondAttribute="centerX" id="kgq-5Z-UtF"/>
+                            <constraint firstItem="aVY-DO-560" firstAttribute="top" secondItem="ga6-GD-I7o" secondAttribute="bottom" constant="150" id="38B-i6-FYQ"/>
+                            <constraint firstItem="BRN-zT-kzC" firstAttribute="centerX" secondItem="9ul-uK-yaw" secondAttribute="centerX" id="9Pd-D2-s9R"/>
+                            <constraint firstItem="ga6-GD-I7o" firstAttribute="leading" secondItem="fYI-T9-Y85" secondAttribute="leading" constant="20" id="CIb-xe-H0t"/>
+                            <constraint firstItem="fYI-T9-Y85" firstAttribute="trailing" secondItem="ga6-GD-I7o" secondAttribute="trailing" constant="20" id="K46-ID-tkg"/>
+                            <constraint firstItem="BRN-zT-kzC" firstAttribute="centerY" secondItem="9ul-uK-yaw" secondAttribute="centerY" id="cfr-vX-wKR"/>
+                            <constraint firstItem="aVY-DO-560" firstAttribute="leading" secondItem="fYI-T9-Y85" secondAttribute="leading" constant="130" id="e5w-hy-QKc"/>
+                            <constraint firstItem="fYI-T9-Y85" firstAttribute="trailing" secondItem="aVY-DO-560" secondAttribute="trailing" constant="130" id="hL7-4d-pPf"/>
+                            <constraint firstItem="ga6-GD-I7o" firstAttribute="top" secondItem="BRN-zT-kzC" secondAttribute="bottom" constant="30" id="kSD-Mi-R5m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fYI-T9-Y85"/>
                     </view>
                     <navigationItem key="navigationItem" id="I9y-ex-v2D"/>
+                    <connections>
+                        <outlet property="playButton" destination="ga6-GD-I7o" id="tti-wh-zjr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBf-25-h8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497.10144927536237" y="86.383928571428569"/>
+            <point key="canvasLocation" x="-498.39999999999998" y="85.907046476761622"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="re7-bF-LQq">
@@ -86,15 +94,15 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KFH-ss-OLP">
                                         <rect key="frame" x="0.0" y="30" width="414" height="758"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dzx-BW-Ddd">
-                                            <size key="itemSize" width="158" height="224"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" sectionInsetReference="layoutMargins" id="le3-92-t7J">
+                                            <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="saZ-BH-TT0" customClass="CardsCollectionViewCell" customModule="Matching" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="10" width="140" height="210"/>
+                                                <rect key="frame" x="8" y="8" width="140" height="210"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QUx-gY-APD">
                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
@@ -180,7 +188,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Game Center Logo" width="340" height="340"/>
         <image name="back" width="158" height="224"/>
         <image name="background" width="736" height="414"/>
     </resources>

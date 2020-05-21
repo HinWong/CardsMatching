@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "compression-type" : "gpu-optimized-smallest",
       "filename" : "Game Center Logo.png",
       "idiom" : "universal",
       "scale" : "1x"

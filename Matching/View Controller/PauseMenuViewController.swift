@@ -8,21 +8,7 @@
 
 import UIKit
 
-//@objc protocol ResumeTimerDelegate {
-//    func resumeTimer()
-//    func timerElapsed()
-//}
-//
-//extension ResumeTimerDelegate {
-//    func resumeTimer() {
-//        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
-//    }
-//
-//    func timerElapsed() {
-//        GameViewController.sharedInstance.milliseconds -= 1
-//    }
-//
-//}
+
 
 class PauseMenuViewController: UIViewController {
     
