@@ -20,9 +20,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var cardArray = [Card]()
     var firstFlippedCardIndex: IndexPath?
     var timer: Timer?
-    var milliseconds: Float = 30 * 1000 // 30 seconds on timer
+    var milliseconds: Float = 30.0 * 1000 // 30 seconds on timer
     private let spacing:CGFloat = 16.0
-    static let sharedInstance = GameViewController()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -62,14 +61,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @objc func gameTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
-        //RunLoop.main.add(timer!, forMode: .common)
     }
-    
-
     
     @objc func timerElapsed() {
         milliseconds -= 1
-        let seconds = String(format: "%.2f", milliseconds/1000)
+        let seconds = String(format: "%.2f", (milliseconds / 1000))
         timerLabel?.text = "Time Remaining: \(seconds)"
         
         if milliseconds <= 0 {
@@ -179,7 +175,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if isWon == true {
             if milliseconds > 0 {
                 timer?.invalidate()
-                saveHighScore(scores: (30 - (milliseconds / 10)) * -1)
+                saveHighScore(scores: milliseconds)
             }
             title = "Great Job"
             message = "You won"

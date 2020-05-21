@@ -11,17 +11,18 @@ import GameKit
 
 class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate {
     
+    // MARK: - Outlets
+    @IBOutlet weak var playButton: UIButton!
+    
    //MARK: - Life Cycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticatePlayer()
+        playButton.layer.cornerRadius = 30
+        
     }
-    
-    @IBAction func playButton(_ sender: Any) {
-        performSegue(withIdentifier: "toGameVC", sender: self)
-    }
-    
+
     //MARK: - Actions
     
     @IBAction func gameCenterButtonTapped(_ sender: Any) {
@@ -29,6 +30,10 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
         let gameCenterVC = GKGameCenterViewController()
         gameCenterVC.gameCenterDelegate = self
         VC?.present(gameCenterVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func playButton(_ sender: Any) {
+        performSegue(withIdentifier: "toGameVC", sender: self)
     }
     
 //MARK: - Game Center Methods
