@@ -20,7 +20,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var cardArray = [Card]()
     var firstFlippedCardIndex: IndexPath?
     var timer: Timer?
-    var milliseconds: Float = 60 * 1000 // 60 seconds on timer
+    var milliseconds: Float = 30 * 1000 // 30 seconds on timer
     private let spacing:CGFloat = 16.0
     static let sharedInstance = GameViewController()
     
@@ -31,6 +31,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
         gameTimer()
+        NotificationCenter.default.addObserver(self, selector: #selector(gameTimer), name: NSNotification.Name(rawValue: "gameTimer"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,14 +60,12 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK: - Timer Methods
     
-    func gameTimer() {
+    @objc func gameTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .common)
+        //RunLoop.main.add(timer!, forMode: .common)
     }
     
-    func resumeTimer() {
-        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
-    }
+
     
     @objc func timerElapsed() {
         milliseconds -= 1
@@ -78,7 +77,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
             timerLabel.textColor = UIColor.red
             
             checkGameEnded()
-        }
+        } 
     }
     
     //MARK: - Collection View Protocol Methods
@@ -92,6 +91,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.setCard(card)
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if milliseconds <= 0 {
             return
@@ -179,7 +179,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if isWon == true {
             if milliseconds > 0 {
                 timer?.invalidate()
-                saveHighScore(scores: (60 - (milliseconds / 10) * -1))
+                saveHighScore(scores: (30 - (milliseconds / 10)) * -1)
             }
             title = "Great Job"
             message = "You won"
@@ -237,3 +237,5 @@ extension GameViewController: GKGameCenterControllerDelegate {
       }
 
 }
+
+
