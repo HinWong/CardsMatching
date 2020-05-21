@@ -20,7 +20,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var cardArray = [Card]()
     var firstFlippedCardIndex: IndexPath?
     var timer: Timer?
-    var milliseconds: Float = 30.0 * 1000 // 30 seconds on timer
+    var milliseconds: Float = 20.0 * 1000 // 20 seconds on timer
     private let spacing:CGFloat = 16.0
     
     //MARK: - Life Cycle

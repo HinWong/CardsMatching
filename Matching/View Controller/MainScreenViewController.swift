@@ -19,7 +19,7 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticatePlayer()
-        playButton.layer.cornerRadius = 30
+        playButton.layer.cornerRadius = 15
         
     }
 
