@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f8F-tQ-RKj">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,65 +12,68 @@
             <objects>
                 <viewController storyboardIdentifier="PauseVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="f8F-tQ-RKj" customClass="PauseMenuViewController" customModule="Matching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvZ-jQ-uPU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IS7-VJ-Gr2">
-                                <rect key="frame" x="20" y="200" width="335" height="267"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOn-YN-e6f">
+                                <rect key="frame" x="40" y="243" width="334" height="250"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMX-Sb-738">
-                                        <rect key="frame" x="20" y="10" width="295" height="53"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press resume to continue playing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lum-sy-4VF">
-                                        <rect key="frame" x="20" y="103" width="295" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXP-wA-g5q">
-                                        <rect key="frame" x="20" y="203" width="295" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nng-Od-sxh">
+                                        <rect key="frame" x="20" y="190" width="294" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0dN-7J-Uqf"/>
+                                        </constraints>
                                         <state key="normal" title="Resume">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="resumeButtonTapped:" destination="f8F-tQ-RKj" eventType="touchUpInside" id="zCz-Ou-DSY"/>
+                                            <action selector="resumeButtonTapped:" destination="f8F-tQ-RKj" eventType="touchUpInside" id="qvp-Gl-8I5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXM-Ff-Ivs">
+                                        <rect key="frame" x="20" y="10" width="294" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press resume to continue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJM-pz-Tpc">
+                                        <rect key="frame" x="20" y="87" width="294" height="71.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="qXP-wA-g5q" secondAttribute="bottom" constant="20" id="43g-sO-uNe"/>
-                                    <constraint firstItem="wMX-Sb-738" firstAttribute="top" secondItem="IS7-VJ-Gr2" secondAttribute="top" constant="10" id="83G-Yl-22V"/>
-                                    <constraint firstItem="lum-sy-4VF" firstAttribute="top" secondItem="wMX-Sb-738" secondAttribute="bottom" constant="40" id="C4l-Yh-Boz"/>
-                                    <constraint firstItem="qXP-wA-g5q" firstAttribute="leading" secondItem="IS7-VJ-Gr2" secondAttribute="leading" constant="20" id="E75-PH-4MR"/>
-                                    <constraint firstItem="qXP-wA-g5q" firstAttribute="top" secondItem="lum-sy-4VF" secondAttribute="bottom" constant="40" id="Gj4-yr-Her"/>
-                                    <constraint firstAttribute="trailing" secondItem="wMX-Sb-738" secondAttribute="trailing" constant="20" id="IZG-F7-M8X"/>
-                                    <constraint firstItem="lum-sy-4VF" firstAttribute="leading" secondItem="IS7-VJ-Gr2" secondAttribute="leading" constant="20" id="eYa-ci-KJj"/>
-                                    <constraint firstItem="wMX-Sb-738" firstAttribute="leading" secondItem="IS7-VJ-Gr2" secondAttribute="leading" constant="20" id="h67-Hp-Ie0"/>
-                                    <constraint firstAttribute="trailing" secondItem="qXP-wA-g5q" secondAttribute="trailing" constant="20" id="pIy-VU-ieM"/>
-                                    <constraint firstAttribute="trailing" secondItem="lum-sy-4VF" secondAttribute="trailing" constant="20" id="xTr-eh-pvm"/>
+                                    <constraint firstAttribute="trailing" secondItem="nng-Od-sxh" secondAttribute="trailing" constant="20" id="4Uv-ps-ydO"/>
+                                    <constraint firstAttribute="trailing" secondItem="LJM-pz-Tpc" secondAttribute="trailing" constant="20" id="6PY-Zq-NeX"/>
+                                    <constraint firstItem="LJM-pz-Tpc" firstAttribute="top" secondItem="iXM-Ff-Ivs" secondAttribute="bottom" constant="35" id="EBn-7G-woc"/>
+                                    <constraint firstItem="nng-Od-sxh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LJM-pz-Tpc" secondAttribute="bottom" constant="20" id="H2P-N2-eHE"/>
+                                    <constraint firstAttribute="bottom" secondItem="nng-Od-sxh" secondAttribute="bottom" constant="20" id="SKl-KI-zwx"/>
+                                    <constraint firstItem="LJM-pz-Tpc" firstAttribute="leading" secondItem="rOn-YN-e6f" secondAttribute="leading" constant="20" id="Yne-ac-zUz"/>
+                                    <constraint firstItem="iXM-Ff-Ivs" firstAttribute="top" secondItem="rOn-YN-e6f" secondAttribute="top" constant="10" id="cam-Ka-mjK"/>
+                                    <constraint firstAttribute="trailing" secondItem="iXM-Ff-Ivs" secondAttribute="trailing" constant="20" id="dSX-5z-g80"/>
+                                    <constraint firstItem="nng-Od-sxh" firstAttribute="leading" secondItem="rOn-YN-e6f" secondAttribute="leading" constant="20" id="e0k-rv-4PY"/>
+                                    <constraint firstAttribute="height" constant="250" id="ra5-K1-PU5"/>
+                                    <constraint firstItem="iXM-Ff-Ivs" firstAttribute="leading" secondItem="rOn-YN-e6f" secondAttribute="leading" constant="20" id="vBr-QN-ncD"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IS7-VJ-Gr2" firstAttribute="leading" secondItem="bt4-po-IOZ" secondAttribute="leading" constant="20" id="Dmj-sy-qeR"/>
-                            <constraint firstItem="bt4-po-IOZ" firstAttribute="bottom" secondItem="IS7-VJ-Gr2" secondAttribute="bottom" constant="200" id="JBS-GP-RDD"/>
-                            <constraint firstItem="IS7-VJ-Gr2" firstAttribute="top" secondItem="bt4-po-IOZ" secondAttribute="top" constant="200" id="TJx-P3-D1t"/>
-                            <constraint firstItem="bt4-po-IOZ" firstAttribute="trailing" secondItem="IS7-VJ-Gr2" secondAttribute="trailing" constant="20" id="iPO-SX-Dm7"/>
+                            <constraint firstItem="rOn-YN-e6f" firstAttribute="leading" secondItem="bt4-po-IOZ" secondAttribute="leading" constant="40" id="Eus-XR-dAB"/>
+                            <constraint firstItem="rOn-YN-e6f" firstAttribute="centerX" secondItem="gvZ-jQ-uPU" secondAttribute="centerX" id="OGb-G0-0dg"/>
+                            <constraint firstItem="rOn-YN-e6f" firstAttribute="centerY" secondItem="gvZ-jQ-uPU" secondAttribute="centerY" id="Pix-P5-gWB"/>
+                            <constraint firstItem="bt4-po-IOZ" firstAttribute="trailing" secondItem="rOn-YN-e6f" secondAttribute="trailing" constant="40" id="q39-P9-EnF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bt4-po-IOZ"/>
                     </view>
                     <connections>
-                        <outlet property="bodyLabel" destination="lum-sy-4VF" id="Db0-fm-2DQ"/>
-                        <outlet property="resumeButton" destination="qXP-wA-g5q" id="35T-r0-DM8"/>
-                        <outlet property="titleLabel" destination="wMX-Sb-738" id="kyT-lZ-NcR"/>
+                        <outlet property="bodyLabel" destination="LJM-pz-Tpc" id="1YH-6n-T9E"/>
+                        <outlet property="resumeButton" destination="nng-Od-sxh" id="qLe-gj-o8s"/>
+                        <outlet property="titleLabel" destination="iXM-Ff-Ivs" id="jum-ah-qUp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOU-6G-7kD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
