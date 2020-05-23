@@ -23,7 +23,6 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
         super.viewDidLoad()
         authenticatePlayer()
         playButton.layer.cornerRadius = 15
-        //setBackground()
     }
 
     //MARK: - Actions
@@ -58,18 +57,7 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
         }
     }
     
-    //MARK: - Background Methods
-    
-//    func setBackground() {
-//        view.addSubview(backgroundImageView)
-//        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-//        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        backgroundImageView.image = UIImage(named: "forest")
-//
-//    }
+
     
 
 }
