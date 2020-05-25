@@ -9,7 +9,7 @@
 import UIKit
 
 class FlipViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     //MARK: - Outlets
     
     @IBOutlet weak var movesLabel: UILabel!
@@ -19,7 +19,7 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var model = CardController()
     var cardArray = [Card]()
     var firstFlippedIndex: IndexPath?
-    var flips = 25
+    var flips = 24
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -40,6 +40,7 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func pauseGameButtonTapped(_ sender: Any) {
         
     }
+    
     @IBAction func theQuitButtonTapped(_ sender: Any) {
         restartingGame()
     }
@@ -47,11 +48,6 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Moves Methods
     func setUpMovesLabel() {
         movesLabel.text = "Moves Remaining: \(flips)"
-        
-        if flips <= 0 {
-            movesLabel.textColor = UIColor.red
-            checkGameCondition()
-        }
     }
     
     //MARK: - Collection view protocol methods
@@ -68,7 +64,7 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if flips <= 0 {
+        if flips == 0 {
             return
         }
         let cardCell = collectionView.cellForItem(at: indexPath) as! CardsCollectionViewCell
@@ -141,8 +137,8 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func checkGameCondition() {
         var gameWon = true
-        for cards in cardArray {
-            if cards.isMatched == false {
+        for card in cardArray {
+            if card.isMatched == false {
                 gameWon = false
                 break
             }
@@ -159,7 +155,8 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
             title = "Great Job"
             message = "You won"
             
-        } else {
+        }
+        else {
             //If unmatched cards remain, check if there are still flips left
             if flips > 0 {
                 return
@@ -183,5 +180,5 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func restartingGame() {
         UIApplication.shared.windows[0].rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
     }
-
+    
 }//End of view controller class

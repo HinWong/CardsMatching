@@ -16,13 +16,14 @@ class MainScreenViewController: UIViewController, GKGameCenterControllerDelegate
     
     // MARK: - Outlets
     @IBOutlet weak var playButton: UIButton!
-    
-   //MARK: - Life Cycle Functions
+    @IBOutlet weak var movesButton: UIButton!
+    //MARK: - Life Cycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticatePlayer()
         playButton.layer.cornerRadius = 15
+        movesButton.layer.cornerRadius = 15
     }
 
     //MARK: - Actions

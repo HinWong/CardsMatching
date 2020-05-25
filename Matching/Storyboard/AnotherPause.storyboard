@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Other Pause Menu View Controller-->
+        <scene sceneID="sNf-Cf-JYN">
+            <objects>
+                <viewController id="3Tm-qH-TgK" customClass="OtherPauseMenuViewController" customModule="Matching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h1x-tL-nEO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iC7-9N-sWd">
+                                <rect key="frame" x="40" y="208.5" width="295" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGK-eU-JyZ">
+                                        <rect key="frame" x="20" y="190" width="255" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ICh-wS-txU"/>
+                                        </constraints>
+                                        <state key="normal" title="Resume">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="theResumeButtonTapped:" destination="3Tm-qH-TgK" eventType="touchUpInside" id="oZT-XV-pdS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWb-oo-C7F">
+                                        <rect key="frame" x="20" y="25" width="255" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press resume to continue playing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-j1-pgv">
+                                        <rect key="frame" x="20" y="87" width="255" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hGK-eU-JyZ" secondAttribute="bottom" constant="20" id="7CX-wN-xse"/>
+                                    <constraint firstItem="hGK-eU-JyZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VLt-j1-pgv" secondAttribute="bottom" constant="20" id="D4p-5L-mfp"/>
+                                    <constraint firstAttribute="height" constant="250" id="FT1-Vp-Kmz"/>
+                                    <constraint firstItem="VLt-j1-pgv" firstAttribute="top" secondItem="FWb-oo-C7F" secondAttribute="bottom" constant="20" id="GO2-dy-B0y"/>
+                                    <constraint firstItem="FWb-oo-C7F" firstAttribute="leading" secondItem="iC7-9N-sWd" secondAttribute="leading" constant="20" id="J7U-0b-2P1"/>
+                                    <constraint firstItem="FWb-oo-C7F" firstAttribute="top" secondItem="iC7-9N-sWd" secondAttribute="top" constant="25" id="Ml3-YB-scs"/>
+                                    <constraint firstItem="hGK-eU-JyZ" firstAttribute="leading" secondItem="iC7-9N-sWd" secondAttribute="leading" constant="20" id="QAU-jG-CwP"/>
+                                    <constraint firstAttribute="trailing" secondItem="VLt-j1-pgv" secondAttribute="trailing" constant="20" id="Uwy-ud-5o3"/>
+                                    <constraint firstItem="VLt-j1-pgv" firstAttribute="leading" secondItem="iC7-9N-sWd" secondAttribute="leading" constant="20" id="XpD-Aj-pkk"/>
+                                    <constraint firstAttribute="trailing" secondItem="FWb-oo-C7F" secondAttribute="trailing" constant="20" id="abd-M5-z3G"/>
+                                    <constraint firstAttribute="trailing" secondItem="hGK-eU-JyZ" secondAttribute="trailing" constant="20" id="flW-vb-ita"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iC7-9N-sWd" firstAttribute="centerY" secondItem="h1x-tL-nEO" secondAttribute="centerY" id="ANp-zO-riy"/>
+                            <constraint firstItem="iC7-9N-sWd" firstAttribute="centerX" secondItem="h1x-tL-nEO" secondAttribute="centerX" id="JfU-Gf-pMQ"/>
+                            <constraint firstItem="ygU-ie-U9h" firstAttribute="trailing" secondItem="iC7-9N-sWd" secondAttribute="trailing" constant="40" id="RnR-di-pfF"/>
+                            <constraint firstItem="iC7-9N-sWd" firstAttribute="leading" secondItem="ygU-ie-U9h" secondAttribute="leading" constant="40" id="gJQ-HA-LE1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ygU-ie-U9h"/>
+                    </view>
+                    <connections>
+                        <outlet property="gamePausedOutlet" destination="FWb-oo-C7F" id="Gfq-nO-YTG"/>
+                        <outlet property="resumeGameLabel" destination="VLt-j1-pgv" id="YPo-i9-vdb"/>
+                        <outlet property="theResumeButton" destination="hGK-eU-JyZ" id="wQ0-Oi-fHV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XkT-GS-8Iu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="201.94902548725639"/>
+        </scene>
+    </scenes>
+</document>
