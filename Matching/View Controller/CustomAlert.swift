@@ -10,9 +10,9 @@ import UIKit
 
 class CustomAlert {
     
-    func alert() -> OtherPauseMenuViewController {
+    func customAlert() -> OtherPauseMenuViewController {
         let storyboard = UIStoryboard(name: "AnotherPause", bundle: .main)
-        guard let alertViewController = storyboard.instantiateViewController(withIdentifier: "PauseVC") as? OtherPauseMenuViewController else {return OtherPauseMenuViewController() }
+        guard let alertViewController = storyboard.instantiateViewController(withIdentifier: "anotherPauseVC") as? OtherPauseMenuViewController else {return OtherPauseMenuViewController() }
         return alertViewController
     }
     

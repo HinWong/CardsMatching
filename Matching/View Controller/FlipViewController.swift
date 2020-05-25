@@ -37,8 +37,11 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK: - Actions
     
+    let customAlert = CustomAlert()
+    
     @IBAction func pauseGameButtonTapped(_ sender: Any) {
-        
+        let customAlertVC = customAlert.customAlert()
+        present(customAlertVC, animated: true)
     }
     
     @IBAction func theQuitButtonTapped(_ sender: Any) {
