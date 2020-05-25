@@ -10,7 +10,7 @@ import Foundation
 
 class CardController {
     
-    func generateCards() -> [Card] {
+   func generateCards() -> [Card] {
         var randomNumbersArray = [Int]()
         var randomCardsArray = [Card]()
         

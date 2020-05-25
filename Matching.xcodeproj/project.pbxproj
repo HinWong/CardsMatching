@@ -26,6 +26,10 @@
 		4EB342172472DE3900366740 /* PauseMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB342162472DE3900366740 /* PauseMenu.storyboard */; };
 		4EB342192472DEA700366740 /* PauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB342182472DEA700366740 /* PauseMenuViewController.swift */; };
 		4EB3421D2472E81100366740 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3421C2472E81100366740 /* AlertService.swift */; };
+		4EC5EB6A247C28A600E6DE08 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5EB69247C28A600E6DE08 /* FlipViewController.swift */; };
+		4EC5EB6C247C7B6100E6DE08 /* AnotherPause.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC5EB6B247C7B6100E6DE08 /* AnotherPause.storyboard */; };
+		4EC5EB6E247C7EED00E6DE08 /* OtherPauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5EB6D247C7EED00E6DE08 /* OtherPauseMenuViewController.swift */; };
+		4EC5EB70247C7F4F00E6DE08 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5EB6F247C7F4F00E6DE08 /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		4EB342162472DE3900366740 /* PauseMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PauseMenu.storyboard; sourceTree = "<group>"; };
 		4EB342182472DEA700366740 /* PauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuViewController.swift; sourceTree = "<group>"; };
 		4EB3421C2472E81100366740 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		4EC5EB69247C28A600E6DE08 /* FlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = "<group>"; };
+		4EC5EB6B247C7B6100E6DE08 /* AnotherPause.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnotherPause.storyboard; sourceTree = "<group>"; };
+		4EC5EB6D247C7EED00E6DE08 /* OtherPauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPauseMenuViewController.swift; sourceTree = "<group>"; };
+		4EC5EB6F247C7F4F00E6DE08 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 				4E6405ED24463EA10032D97B /* Main.storyboard */,
 				4E6405F224463EA60032D97B /* LaunchScreen.storyboard */,
 				4EB342162472DE3900366740 /* PauseMenu.storyboard */,
+				4EC5EB6B247C7B6100E6DE08 /* AnotherPause.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -175,6 +184,9 @@
 				4EB03A812448B6D5006693F4 /* MainScreenViewController.swift */,
 				4EB342182472DEA700366740 /* PauseMenuViewController.swift */,
 				4EB3421C2472E81100366740 /* AlertService.swift */,
+				4EC5EB69247C28A600E6DE08 /* FlipViewController.swift */,
+				4EC5EB6D247C7EED00E6DE08 /* OtherPauseMenuViewController.swift */,
+				4EC5EB6F247C7F4F00E6DE08 /* CustomAlert.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -245,6 +257,7 @@
 				4E640603244640540032D97B /* shuffle.wav in Resources */,
 				4EB342172472DE3900366740 /* PauseMenu.storyboard in Resources */,
 				4E640604244640540032D97B /* dingcorrect.wav in Resources */,
+				4EC5EB6C247C7B6100E6DE08 /* AnotherPause.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,13 +269,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E816BF92447800E00B70223 /* GameViewController.swift in Sources */,
+				4EC5EB6E247C7EED00E6DE08 /* OtherPauseMenuViewController.swift in Sources */,
 				4E6405E824463EA10032D97B /* AppDelegate.swift in Sources */,
 				4E64060A244643470032D97B /* CardController.swift in Sources */,
 				4E816BF42447709300B70223 /* CardsCollectionViewCell.swift in Sources */,
+				4EC5EB6A247C28A600E6DE08 /* FlipViewController.swift in Sources */,
 				4EB3421D2472E81100366740 /* AlertService.swift in Sources */,
 				4E640607244641890032D97B /* Card.swift in Sources */,
 				4EB03A822448B6D5006693F4 /* MainScreenViewController.swift in Sources */,
 				4E6405EA24463EA10032D97B /* SceneDelegate.swift in Sources */,
+				4EC5EB70247C7F4F00E6DE08 /* CustomAlert.swift in Sources */,
 				4E64060D244646460032D97B /* SoundManager.swift in Sources */,
 				4EB342192472DEA700366740 /* PauseMenuViewController.swift in Sources */,
 			);
