@@ -71,9 +71,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if milliseconds <= 0 {
             timer?.invalidate()
             timerLabel.textColor = UIColor.red
-            
+
             checkGameEnded()
-        } 
+        }
     }
     
     //MARK: - Collection View Protocol Methods
