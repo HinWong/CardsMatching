@@ -1,2 +1,2 @@
 # CardsMatching
-A timed, card matching memory game written in Swift. Includes Game Center funcationality.
+A card matching memory game with two different game modes written in Swift. Includes Game Center funcationality.
