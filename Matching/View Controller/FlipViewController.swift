@@ -51,6 +51,9 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Moves Methods
     func setUpMovesLabel() {
         movesLabel.text = "Moves Remaining: \(flips)"
+        if flips <= 0 {
+            checkGameCondition()
+        }
     }
     
     //MARK: - Collection view protocol methods
@@ -129,7 +132,10 @@ class FlipViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             firstCardCell?.flipBack()
             secondCardCell?.flipBack()
+            
+            checkGameCondition()
         }
+        
         //Tell the collection view to reload the cell of the first card if it's nil
         if firstCardCell == nil {
             cardsCollectionView.reloadItems(at: [firstFlippedIndex!])
